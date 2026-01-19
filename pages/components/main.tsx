@@ -15,6 +15,8 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <Text style={{ color: 'white', fontSize: '12px' }}>Pla SRL Sanitización </Text>
       </div>
 
+
+
       <Header style={{ 
         position: 'sticky', 
         top: 0, 
@@ -55,13 +57,13 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             shape="round" 
             icon={<WhatsAppOutlined />} 
             style={{ background: '#52c41a', border: 'none' }}
-            href="https://wa.me/tu-numero"
-          >
+        href="https://wa.me/18295422989?text=Hola%20Pla%20SRL%20Sanitización,%20vi%20su%20página%20web%20y%20me%20gustaría%20solicitar%20una%20cotización."
+        target="_blank"
+           >
             Cotizar Gratis
-          </Button>
+          </Button> 
         </div>
       </Header>
-
       <Content style={{ padding: '0' }}>
         <div style={{ minHeight: '80vh' }}>
           {children}
