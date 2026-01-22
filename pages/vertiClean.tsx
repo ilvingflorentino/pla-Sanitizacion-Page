@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLayout from './main'; // Los dos puntos sirven para salir de la carpeta 'pages'
+import MainLayout from '../components/main'; // RUTA REPARADA
 import { Typography, Row, Col, Button, Card, Divider, Space, Tag, Statistic } from 'antd';
 import { 
   ThunderboltOutlined, 

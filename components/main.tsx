@@ -50,7 +50,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               label: 'Nuestras Empresas', 
               icon: <ApartmentOutlined />,
               children: [
-                { key: '2', label: <Link href="/servicios">PLA (Sanitización)</Link> },
+                { key: '2', label: <Link href="/pla">PLA (Sanitización)</Link> },
                 { key: '5', label: <Link href="vertiClean">VertiClean (Drones)</Link> },
               ]
             },

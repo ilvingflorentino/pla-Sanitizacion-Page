@@ -67,12 +67,12 @@ export default function Home() {
               hoverable 
               style={{ borderRadius: '20px', overflow: 'hidden', borderTop: '6px solid #389e0d' }}
               cover={<div style={{ background: '#f6ffed', padding: '40px', textAlign: 'center' }}>
-                <Image src="/pla-logo.png" preview={false} style={{ maxHeight: '80px' }} />
+                <Image src="/pla-logo.png" preview={false} style={{ maxHeight: '160px' }} />
               </div>}
             >
               <Title level={3}>PLA Sanitización</Title>
               <Paragraph>Líderes en control de plagas y desinfección industrial. Protegemos la salud de tus espacios con estándares de alta calidad.</Paragraph>
-              <Link href="/servicios">
+              <Link href="/pla" passHref>
                 <Button type="primary" block style={{ background: '#389e0d', borderColor: '#389e0d' }} icon={<ArrowRightOutlined />}>
                   Ver Servicios de Sanitización
                 </Button>
@@ -86,7 +86,7 @@ export default function Home() {
               hoverable 
               style={{ borderRadius: '20px', overflow: 'hidden', borderTop: '6px solid #1890ff' }}
               cover={<div style={{ background: '#e6f7ff', padding: '40px', textAlign: 'center' }}>
-                <Image src="/VertiClean-PrimaryLogo_page-0001.jpg" preview={false} style={{ maxHeight: '80px' }} />
+                <Image src="/VertiClean-PrimaryLogo_page-0001.jpg" preview={false} style={{ maxHeight: '159px' }} />
               </div>}
             >
               <Title level={3}>VertiClean</Title>

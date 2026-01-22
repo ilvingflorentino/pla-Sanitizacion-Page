@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLayout from './main'; // Ajustado para salir de /pages
+import MainLayout from '../components/main'; // RUTA REPARADA
 import { Typography, Row, Col, Card, Button, Image, Divider, Space, Tag } from 'antd';
 import { 
   CheckCircleOutlined, 
