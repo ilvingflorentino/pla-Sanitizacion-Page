@@ -16,12 +16,14 @@ const { Title, Paragraph, Text } = Typography;
 export default function Contacto() {
   // Tus imágenes reales de los operativos
   const fotosTrabajo = [
-    "/fumi-3.webp", 
-    "/fumigadores-1.jpg", 
+    "pla-logo.png",
+    "/VertiClean-PrimaryLogo_page-0001.jpg", 
     "/fumigadores-2.webp", 
+    "inspeccion-drone.webp",
     "/fumigadores.jpg",
+    "limpieza-drone.webp",
   ];
-
+ 
   return (
     <MainLayout>
       <div style={{ padding: '60px 20px', maxWidth: '1200px', margin: '0 auto' }}>

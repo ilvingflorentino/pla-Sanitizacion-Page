@@ -1,140 +1,191 @@
 import React from 'react';
-import MainLayout from '../components/main'; // RUTA REPARADA
-import { Typography, Row, Col, Button, Card, Divider, Space, Tag, Statistic } from 'antd';
+import MainLayout from '../components/main';
+import { Typography, Row, Col, Card, Button, Image, Tag, Divider, Space } from 'antd';
 import { 
-  ThunderboltOutlined, 
-  SafetyCertificateOutlined, 
-  RiseOutlined,
-  CheckCircleFilled,
-  ArrowRightOutlined,
-  GlobalOutlined,
-  DashboardOutlined
+  RocketFilled, 
+  ThunderboltFilled, 
+  SafetyCertificateFilled, 
+  GlobalOutlined, 
+  RadarChartOutlined, 
+  ArrowRightOutlined, 
+  WhatsAppOutlined 
 } from '@ant-design/icons';
 
 const { Title, Paragraph, Text } = Typography;
-/* ... (tus imports se mantienen igual) ... */
 
-export default function VertiCleanPage() {
+export default function VertiCleanFuturistic() {
   return (
     <MainLayout>
-      {/* 1. HERO SECTION - Ajustado con el gradiente de la web base */}
-      <div style={{ 
-        background: 'linear-gradient(rgba(0, 21, 41, 0.7), rgba(0, 21, 41, 0.8)), url("/hero-drone.jpg")', 
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        padding: '140px 20px',
-        textAlign: 'center',
-        color: 'white'
-      }}>
-        <Tag color="blue" style={{ marginBottom: '20px', padding: '5px 15px', fontSize: '14px', borderRadius: '10px' }}>
-          ISLACORP PRESENTA: VERTICLEAN
-        </Tag>
-        <Title style={{ color: 'white', fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 800, lineHeight: 1.1 }}>
-          Líderes en Limpieza Automatizada <br/> con Drones de Vanguardia
-        </Title>
-        <Paragraph style={{ color: 'rgba(255,255,255,0.9)', fontSize: '19px', maxWidth: '850px', margin: '20px auto 40px' }}>
-          Combinamos tecnología innovadora y personal experto para entregar resultados de excelencia que superan los estándares del mercado dominicano.
-        </Paragraph>
-        <Space size="large">
-          <Button type="primary" size="large" icon={<ArrowRightOutlined />} style={{ height: '55px', borderRadius: '30px', padding: '0 40px', background: '#1890ff' }} href="https://wa.me/18295422989" target="_blank">
-            Cotizar Ahora
-          </Button>
-        </Space>
-      </div>
-
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 20px' }}>
+      <div style={{ backgroundColor: '#000814', color: '#fff', minHeight: '100vh' }}>
         
-        {/* 2. ESTADÍSTICAS RÁPIDAS (Datos de tu PPT) */}
-        <Row gutter={[32, 32]} style={{ marginBottom: '80px', textAlign: 'center' }}>
-          <Col xs={24} md={8}>
-            <Card bordered={false} style={{ background: '#f0f5ff', borderRadius: '20px' }}>
-              <Statistic title="Más Rápido" value={78} suffix="%" valueStyle={{ color: '#003a8c', fontWeight: 'bold' }} />
-              <Text type="secondary">Eficiencia vs Métodos Tradicionales</Text>
-            </Card>
-          </Col>
-          <Col xs={24} md={8}>
-            <Card bordered={false} style={{ background: '#f6ffed', borderRadius: '20px' }}>
-              <Statistic title="Riesgo Humano" value={0} suffix="%" valueStyle={{ color: '#389e0d', fontWeight: 'bold' }} />
-              <Text type="secondary">Seguridad Total en Alturas</Text>
-            </Card>
-          </Col>
-          <Col xs={24} md={8}>
-            <Card bordered={false} style={{ background: '#e6f7ff', borderRadius: '20px' }}>
-              <Statistic title="Ahorro" value={35} suffix="%" valueStyle={{ color: '#1890ff', fontWeight: 'bold' }} />
-              <Text type="secondary">Reducción de Costos Operativos</Text>
-            </Card>
-          </Col>
-        </Row>
+        {/* --- HERO SECTION: CYBERPUNK / TECH STYLE --- */}
+        <div style={{ 
+          position: 'relative', 
+          padding: '120px 20px', 
+          background: 'radial-gradient(circle at top right, #001d3d, #000814)',
+          overflow: 'hidden'
+        }}>
+          {/* Decoración de fondo (grid futurista) */}
+          <div style={{ 
+            position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, 
+            backgroundImage: 'linear-gradient(rgba(24, 144, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(24, 144, 255, 0.05) 1px, transparent 1px)',
+            backgroundSize: '50px 50px', opacity: 0.3 
+          }} />
 
-        {/* 3. SERVICIOS (Expandido según tu presentación) */}
-        <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>Soluciones de Limpieza Especializada</Title>
-        <Row gutter={[24, 24]}>
-          {[
-            { title: "Paneles Solares", icon: <ThunderboltOutlined />, desc: "Maximizamos la eficiencia energética eliminando suciedad acumulada." },
-            { title: "Fachadas y Cristales", icon: <GlobalOutlined />, desc: "Limpieza impecable en edificios corporativos y residenciales." },
-            { title: "Aerogeneradores", icon: <DashboardOutlined />, desc: "Mantenimiento técnico para parques eólicos y energía renovable." },
-            { title: "Estadios e Industria", icon: <RiseOutlined />, desc: "Llegamos a estructuras complejas y de gran escala sin esfuerzo." }
-          ].map((item, i) => (
-            <Col xs={24} sm={12} lg={6} key={i}>
-              <Card hoverable style={{ height: '100%', borderRadius: '20px', textAlign: 'center', border: '1px solid #f0f0f0' }}>
-                <div style={{ fontSize: '45px', color: '#1890ff', marginBottom: '20px' }}>{item.icon}</div>
-                <Title level={4}>{item.title}</Title>
-                <Text type="secondary">{item.desc}</Text>
-              </Card>
+          <Row gutter={[40, 40]} align="middle" style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto' }}>
+            <Col xs={24} md={12}>
+              <Tag color="blue" style={{ background: 'transparent', border: '1px solid #1890ff', color: '#1890ff', marginBottom: '20px' }}>
+                Servicios De Última Generación
+              </Tag>
+              <Title level={1} style={{ color: '#fff', fontSize: 'clamp(40px, 6vw, 70px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '25px' }}>
+                VERTICLEAN: <span style={{ color: '#1890ff', textShadow: '0 0 20px rgba(24,144,255,0.5)' }}>EL FUTURO</span> ES HOY
+              </Title>
+              <Paragraph style={{ color: '#a3b1c6', fontSize: '18px', marginBottom: '40px' }}>
+                Desplegamos unidades robóticas aéreas para el mantenimiento de estructuras críticas. 
+                Más precisión, mayor seguridad, menor impacto ambiental.
+              </Paragraph>
+              <Space size="large">
+                <Button 
+                  type="primary" 
+                  size="large" 
+                  icon={<WhatsAppOutlined />}
+                  style={{ height: '60px', padding: '0 35px', borderRadius: '5px', background: '#1890ff', fontWeight: 'bold' }}
+                  href="https://wa.me/18295422989"
+                >
+                  SOLICITAR DEMO
+                </Button>
+                <Button 
+                  ghost 
+                  size="large" 
+                  icon={<RadarChartOutlined />}
+                  style={{ height: '60px', borderRadius: '5px', borderColor: '#1890ff', color: '#1890ff' }}
+                >
+                  ESPECIFICACIONES
+                </Button>
+              </Space>
             </Col>
-          ))}
-        </Row>
 
-        {/* 4. VENTAJAS (Tu PPT) */}
-        <Divider style={{ margin: '80px 0' }} />
-        <Row gutter={[64, 48]} align="middle">
-          <Col xs={24} md={12}>
-            <div style={{ position: 'relative' }}>
-              <img src="/drone-operation.jpg" alt="Dron en acción" style={{ width: '100%', borderRadius: '30px', zIndex: 2 }} />
-              <div style={{ position: 'absolute', top: -20, left: -20, width: '100%', height: '100%', background: '#e6f7ff', borderRadius: '30px', zIndex: -1 }}></div>
-            </div>
-          </Col>
-          <Col xs={24} md={12}>
-            <Title level={2}>La Ventaja VertiClean</Title>
-            <Space direction="vertical" size="large">
-              <div>
-                <Title level={4}><CheckCircleFilled style={{ color: '#52c41a' }} /> Acceso Total e Impecable</Title>
-                <Paragraph>Llegamos a cualquier rincón de cualquier edificación, sin importar su complejidad arquitectónica.</Paragraph>
-              </div>
-              <div>
-                <Title level={4}><CheckCircleFilled style={{ color: '#52c41a' }} /> Tecnología de Vanguardia</Title>
-                <Paragraph>Equipos de última generación diseñados para la máxima precisión y cuidado de sus superficies.</Paragraph>
-              </div>
-              <div>
-                <Title level={4}><CheckCircleFilled style={{ color: '#52c41a' }} /> Compromiso Ecológico</Title>
-                <Paragraph>Nuestros métodos reducen el consumo de agua y utilizan productos biodegradables.</Paragraph>
-              </div>
-            </Space>
-          </Col>
-        </Row>
-      </div>
+            <Col xs={24} md={12} style={{ textAlign: 'center' }}>
+              <Row gutter={[16, 16]}>
+                {[
+                  { icon: <RocketFilled />, label: 'SEGURIDAD', val: 'Nivel Aero', color: '#1890ff' },
+                  { icon: <ThunderboltFilled />, label: 'EFICIENCIA', val: '78% Fast', color: '#ffc300' },
+                  { icon: <GlobalOutlined />, label: 'SOSTENIBLE', val: 'Eco-Clean', color: '#00f5d4' }
+                ].map((item, i) => (
+                  <Col span={8} key={i}>
+                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '15px', border: '1px solid rgba(24,144,255,0.2)' }}>
+                      <div style={{ fontSize: '24px', color: item.color, marginBottom: '10px' }}>{item.icon}</div>
+                      <Text strong style={{ color: '#fff', display: 'block' }}>{item.val}</Text>
+                      <Text style={{ color: 'rgba(255,255,255,0.4)', fontSize: '10px' }}>{item.label}</Text>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+          </Row>
+        </div>
 
-      {/* 5. CTA FINAL - Estilo Drone Cleaning Company */}
-      <div style={{ 
-        background: '#001529', 
-        padding: '100px 20px', 
-        textAlign: 'center', 
-        color: 'white',
-        backgroundImage: 'radial-gradient(circle at center, #002140 0%, #001529 100%)'
-      }}>
-        <Title level={2} style={{ color: 'white', fontSize: '36px' }}>¿Listo para el futuro de la limpieza?</Title>
-        <Paragraph style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', marginBottom: '40px' }}>
-          Agende una demostración o inspección técnica hoy mismo.
-        </Paragraph>
-        <Button 
-          type="primary" 
-          size="large" 
-          href="https://wa.me/18295422989"
-          target="_blank"
-          style={{ height: '60px', borderRadius: '30px', padding: '0 50px', fontSize: '18px', fontWeight: 'bold' }}
-        >
-          Contactar con un Experto
-        </Button>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '100px 20px' }}>
+          
+          <Title level={2} style={{ color: '#fff', textAlign: 'center', marginBottom: '60px', letterSpacing: '1px' }}>
+            SOLUCIONES DE ALTO IMPACTO
+          </Title>
+
+          <Row gutter={[30, 30]}>
+            {[
+              { title: "Paneles Solares", img: "/drone-paneles.png", desc: "Optimización de absorción fotovoltaica mediante limpieza robótica." },
+              { title: "Fachadas de Cristal", img: "/Drone-cristales.webp", desc: "Mantenimiento impecable en torres corporativas sin interrumpir labores." },
+              { title: "Inspección Industrial", img: "/inspeccion-Drone.webp", desc: "Análisis térmico y estructural mediante visión computarizada avanzada." }
+            ].map((app, idx) => (
+              <Col xs={24} md={8} key={idx}>
+                <Card
+                  hoverable
+                  style={{ background: '#001d3d', border: '1px solid rgba(24,144,255,0.1)', borderRadius: '20px', overflow: 'hidden' }}
+                  cover={<img alt={app.title} src={app.img} style={{ height: '200px', objectFit: 'cover', opacity: 0.8 }} />}
+                  bodyStyle={{ color: '#fff' }}
+                >
+                  <Title level={4} style={{ color: '#1890ff' }}>{app.title}</Title>
+                  <Paragraph style={{ color: 'rgba(255,255,255,0.6)' }}>{app.desc}</Paragraph>
+                  <Button type="text" style={{ color: '#fff', padding: 0 }}>
+                    Explorar <ArrowRightOutlined />
+                  </Button>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+
+          <Divider style={{ borderColor: 'rgba(255,255,255,0.1)', margin: '100px 0' }} />
+
+          {/* --- SECCIÓN TÉCNICA: IMAGEN HUD (ACTUALIZADA) + TEXTO --- */}
+          <Row gutter={[60, 40]} align="middle">
+            <Col xs={24} md={12}>
+              <div style={{ 
+                position: 'relative', 
+                padding: '10px',
+                background: 'rgba(24, 144, 255, 0.05)',
+                borderRadius: '20px',
+                border: '1px solid rgba(24, 144, 255, 0.3)',
+                boxShadow: '0 0 30px rgba(24, 144, 255, 0.2)'
+              }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '30px', height: '30px', borderTop: '3px solid #1890ff', borderLeft: '3px solid #1890ff', borderRadius: '15px 0 0 0', zIndex: 3 }} />
+                <div style={{ position: 'absolute', bottom: 0, right: 0, width: '30px', height: '30px', borderBottom: '3px solid #1890ff', borderRight: '3px solid #1890ff', borderRadius: '0 0 15px 0', zIndex: 3 }} />
+
+                <div style={{ borderRadius: '15px', overflow: 'hidden', lineHeight: 0, position: 'relative', zIndex: 2 }}>
+                  <img 
+                    src="/limpieza-drone.webp" 
+                    alt="VertiClean Operative Drone" 
+                    style={{ width: '100%', height: 'auto', display: 'block', filter: 'brightness(0.9) contrast(1.1)' }} 
+                  />
+                  
+                 
+
+                  <div style={{ position: 'absolute', bottom: '15px', right: '15px', opacity: 0.6 }}>
+                    <Text style={{ color: '#fff', fontSize: '10px', fontFamily: 'monospace' }}>
+                      VERTI_UNIT_RD.01
+                    </Text>
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            <Col xs={24} md={12}>
+              <Title level={2} style={{ color: '#fff', letterSpacing: '2px' }}>TECNOLOGÍA VS CONVENCIONAL</Title>
+              <div style={{ marginTop: '30px' }}>
+                <div style={{ marginBottom: '25px', paddingLeft: '15px', borderLeft: '3px solid #1890ff' }}>
+                  <Text strong style={{ color: '#1890ff', fontSize: '18px', display: 'block' }}>RIESGO HUMANO</Text>
+                  <Paragraph style={{ color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+                    Nulo. Operación remota desde tierra con sistemas de estabilización automática y sensores anticolisión.
+                  </Paragraph>
+                </div>
+                <div style={{ marginBottom: '25px', paddingLeft: '15px', borderLeft: '3px solid #1890ff' }}>
+                  <Text strong style={{ color: '#1890ff', fontSize: '18px', display: 'block' }}>TIEMPO DE EJECUCIÓN</Text>
+                  <Paragraph style={{ color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+                    Despliegue en 15 minutos. Limpieza hasta 5 veces más rápida que el rapel o andamios convencionales.
+                  </Paragraph>
+                </div>
+                <div style={{ marginBottom: '25px', paddingLeft: '15px', borderLeft: '3px solid #1890ff' }}>
+                  <Text strong style={{ color: '#1890ff', fontSize: '18px', display: 'block' }}>PRECISIÓN</Text>
+                  <Paragraph style={{ color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+                    Control de flujo constante y posicionamiento GPS de alta precisión para un acabado uniforme.
+                  </Paragraph>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </div>
+
+        {/* --- FOOTER BANNER --- */}
+        <div style={{ background: 'linear-gradient(90deg, #001d3d 0%, #000814 100%)', padding: '80px 20px', textAlign: 'center' }}>
+          <Title level={3} style={{ color: '#fff', marginBottom: '30px' }}>¿LISTO PARA AUTOMATIZAR SU MANTENIMIENTO?</Title>
+          <Button 
+            type="primary" 
+            size="large" 
+            style={{ borderRadius: '0', background: '#1890ff', height: '55px', padding: '0 50px', fontWeight: 'bold', boxShadow: '0 0 15px rgba(24,144,255,0.4)' }}
+            href="https://wa.me/18295422989"
+          >
+            INICIAR PROYECTO
+          </Button>
+        </div>
       </div>
     </MainLayout>
   );

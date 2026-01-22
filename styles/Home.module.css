@@ -1,141 +1,123 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
   display: flex;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
+  flex-direction: column;
   background-color: var(--background);
 }
 
 .main {
   display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  width: 100%;
+  max-width: 1200px; /* Ampliado para mejor visualización de drones */
+  margin: 0 auto;
+  padding: 80px 24px;
+  background: radial-gradient(circle at 50% 0%, rgba(24, 144, 255, 0.05) 0%, transparent 50%);
 }
 
-.intro {
+/* --- CONTENEDORES DE IMAGEN / LOGO --- */
+
+.logoCard {
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 220px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 50px; /* Lo aleja del borde */
+  transition: all 0.3s ease;
 }
+
+.logoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--verti-blue-glow);
+  border-color: var(--verti-blue);
+}
+
+.logoImageFar {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: scale(0.9);
+}
+
+.fotoCard {
+  border-radius: 20px;
+  height: 220px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.fotoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fotoCard:hover .fotoImage {
+  transform: scale(1.1);
+}
+
+/* --- TEXTOS Y BOTONES --- */
 
 .intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
 }
 
 .intro p {
-  max-width: 440px;
   font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
+  line-height: 1.6;
   color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+  max-width: 600px;
 }
 
 .ctas {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
   gap: 16px;
-  font-size: 14px;
+  margin-top: 32px;
 }
 
 .ctas a {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  justify-content: center;
+  height: 50px;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.primary {
+  background: var(--verti-blue);
+  color: #fff !important;
+  box-shadow: 0 4px 14px var(--verti-blue-glow);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--verti-blue-glow);
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.secondary {
+  border: 1px solid var(--verti-blue);
+  color: var(--verti-blue);
 }
 
 @media (max-width: 600px) {
   .main {
-    padding: 48px 24px;
+    padding: 48px 16px;
   }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .ctas {
+    flex-direction: column;
   }
 }

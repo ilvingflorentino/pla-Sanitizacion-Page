@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import MainLayout from '../components/main';
 import { Typography, Button, Card, Col, Row, Tag, Carousel, Divider, Space, Image } from 'antd';
 import { 
@@ -5,11 +6,80 @@ import {
   ArrowRightOutlined,
   GlobalOutlined,
   RocketOutlined,
-  SafetyCertificateOutlined
+  SafetyCertificateOutlined,
+  MenuOutlined
 } from '@ant-design/icons';
 import Link from 'next/link';
 
 const { Title, Paragraph, Text } = Typography;
+
+// --- COMPONENTE NAVBAR INTERNO ---
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <nav style={{
+      position: 'fixed',
+      top: 0,
+      width: '100%',
+      zIndex: 1000,
+      padding: '12px 40px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+      opacity: scrolled ? 1 : 0,
+      pointerEvents: scrolled ? 'auto' : 'none',
+      transform: scrolled ? 'translateY(0)' : 'translateY(-100%)',
+      background: 'rgba(0, 21, 41, 0.9)',
+      backdropFilter: 'blur(10px)',
+      borderBottom: '1px solid rgba(24, 144, 255, 0.3)',
+      boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{
+          width: '35px',
+          height: '35px',
+          backgroundColor: '#fff',
+          borderRadius: '4px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '3px'
+        }}>
+          <img 
+            src="/islacorp-logo.jpeg" 
+            alt="Logo" 
+            style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+          />
+        </div>
+        <Text style={{ color: '#fff', fontWeight: 800, fontSize: '18px', letterSpacing: '1px' }}>
+          ISLACORP
+        </Text>
+      </div>
+
+      <Space size="large">
+        <Button type="text" style={{ color: '#fff' }} href="#empresas">Empresas</Button>
+        <Button 
+          type="primary" 
+          icon={<WhatsAppOutlined />}
+          href="https://wa.me/18295422989"
+          style={{ background: '#1890ff', borderRadius: '4px', fontWeight: 'bold' }}
+        >
+          CONTACTO
+        </Button>
+      </Space>
+    </nav>
+  );
+};
 
 export default function Home() {
   const logoWrapperStyle: React.CSSProperties = {
@@ -31,78 +101,124 @@ export default function Home() {
 
   return (
     <MainLayout>
-      {/* 1. SECCIÓN HERO - ISLACORP */}
+      <Navbar />
+      
+      {/* 1. SECCIÓN HERO */}
       <div style={{ 
-        padding: '100px 20px', 
-        background: 'linear-gradient(135deg, #001529 0%, #003a8c 100%)', 
-        borderRadius: '0 0 50px 50px',
+        padding: '160px 20px 100px', 
+        background: 'radial-gradient(circle at top right, #003a8c, #001529)', 
+        borderRadius: '0 0 60px 60px',
         marginBottom: '60px',
         textAlign: 'center',
-        color: 'white'
+        color: 'white',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <Tag color="blue" style={{ marginBottom: '15px' }}>GRUPO EMPRESARIAL</Tag>
-        <Title level={1} style={{ color: 'white', fontSize: '48px', marginBottom: '10px' }}>ISLACORP SRL</Title>
-        <Paragraph style={{ fontSize: '20px', color: 'rgba(255,255,255,0.8)', maxWidth: '700px', margin: '0 auto 30px' }}>
-          Soluciones integrales en sanitización avanzada y mantenimiento técnico con drones de vanguardia.
+        <div style={{
+          position: 'absolute', top: '-10%', right: '-5%', width: '400px', height: '400px',
+          background: 'rgba(24, 144, 255, 0.1)', filter: 'blur(80px)', borderRadius: '50%'
+        }} />
+
+        <Tag color="blue" style={{ background: 'transparent', border: '1px solid #1890ff', color: '#1890ff', marginBottom: '20px', padding: '0 15px' }}>
+          SOLUCIONES DE VANGUARDIA
+        </Tag>
+
+        {/* CONTENEDOR FLEX PARA LOGO + TÍTULO */}
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          gap: '20px', 
+          marginBottom: '20px',
+          flexWrap: 'wrap'
+        }}>
+          <div style={{
+            width: 'clamp(60px, 7vw, 85px)',
+            height: 'clamp(60px, 7vw, 85px)',
+            backgroundColor: '#fff',
+            borderRadius: '12px',
+            padding: '3px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 0 25px rgba(24, 144, 255, 0.3)',
+            border: '2px solid #1890ff'
+          }}>
+            <img 
+              src="/islacorp-logo.jpeg" 
+              alt="Islacorp Logo" 
+              style={{ width: '300%', height: '100%', objectFit: 'contain' }} 
+            />
+          </div>
+
+          <Title level={1} style={{ 
+            color: 'white', 
+            fontSize: 'clamp(40px, 6vw, 64px)', 
+            fontWeight: 900, 
+            margin: 0, 
+            letterSpacing: '-2px',
+            lineHeight: 1
+          }}>
+            ISLACORP <span style={{ color: '#1890ff' }}>SRL</span>
+          </Title>
+        </div>
+
+        <Paragraph style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', maxWidth: '800px', margin: '0 auto 40px', lineHeight: 1.6 }}>
+          Transformamos el mantenimiento industrial y la sanitización con 
+          tecnología robótica y procesos de alta precisión.
         </Paragraph>
-        <Space size="middle">
-          <Button type="primary" size="large" href="#empresas" style={{ borderRadius: '25px', height: '50px' }}>
-            Nuestras Empresas
+        
+        <Space size="large">
+          <Button type="primary" size="large" href="#empresas" style={{ borderRadius: '8px', height: '55px', padding: '0 40px', fontWeight: 'bold' }}>
+            Explorar Divisiones
           </Button>
-          <Button ghost size="large" icon={<WhatsAppOutlined />} href="https://wa.me/18295422989" target="_blank" style={{ borderRadius: '25px', height: '50px' }}>
-            Contacto Directo
+          <Button ghost size="large" icon={<WhatsAppOutlined />} href="https://wa.me/18295422989" target="_blank" style={{ borderRadius: '8px', height: '55px', color: '#1890ff', borderColor: '#1890ff' }}>
+            Asesoría Técnica
           </Button>
         </Space>
       </div>
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-        
-        {/* 2. PRESENTACIÓN DE LAS DOS EMPRESAS */}
-        <Title level={2} id="empresas" style={{ textAlign: 'center', marginBottom: '40px' }}>Nuestras Divisiones</Title>
+        <Title level={2} id="empresas" style={{ textAlign: 'center', marginBottom: '60px', letterSpacing: '-1px' }}>Nuestras Divisiones Especializadas</Title>
         
         <Row gutter={[32, 32]}>
-          {/* TARJETA PLA */}
           <Col xs={24} md={12}>
-            <Card 
-              hoverable 
-              style={{ borderRadius: '20px', overflow: 'hidden', borderTop: '6px solid #389e0d' }}
-              cover={<div style={{ background: '#f6ffed', padding: '40px', textAlign: 'center' }}>
-                <Image src="/pla-logo.png" preview={false} style={{ maxHeight: '160px' }} />
+            <Card hoverable style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}
+              cover={<div style={{ background: '#f6ffed', padding: '50px', textAlign: 'center' }}>
+                <Image src="/pla-logo.png" preview={false} style={{ maxHeight: '140px' }} />
               </div>}
             >
               <Title level={3}>PLA Sanitización</Title>
-              <Paragraph>Líderes en control de plagas y desinfección industrial. Protegemos la salud de tus espacios con estándares de alta calidad.</Paragraph>
+              <Paragraph style={{ minHeight: '60px' }}>Líderes en control de plagas y desinfección industrial. Protegemos la salud de tus espacios con estándares internacionales.</Paragraph>
               <Link href="/pla" passHref>
-                <Button type="primary" block style={{ background: '#389e0d', borderColor: '#389e0d' }} icon={<ArrowRightOutlined />}>
+                <Button type="primary" block style={{ background: '#389e0d', borderColor: '#389e0d', height: '45px', borderRadius: '8px' }} icon={<ArrowRightOutlined />}>
                   Ver Servicios de Sanitización
                 </Button>
               </Link>
             </Card>
           </Col>
 
-          {/* TARJETA VERTICLEAN */}
           <Col xs={24} md={12}>
-            <Card 
-              hoverable 
-              style={{ borderRadius: '20px', overflow: 'hidden', borderTop: '6px solid #1890ff' }}
-              cover={<div style={{ background: '#e6f7ff', padding: '40px', textAlign: 'center' }}>
-                <Image src="/VertiClean-PrimaryLogo_page-0001.jpg" preview={false} style={{ maxHeight: '159px' }} />
+            <Card hoverable style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}
+              cover={<div style={{ background: '#e6f7ff', padding: '50px', textAlign: 'center' }}>
+                <Image src="/VertiClean-PrimaryLogo_page-0001.jpg" preview={false} style={{ maxHeight: '140px' }} />
               </div>}
             >
               <Title level={3}>VertiClean</Title>
-            <Paragraph>Innovación en limpieza de fachadas y paneles solares mediante drones. 78% más rápido y 100% seguro.</Paragraph>
-            <Link href="/vertiClean"> {/* <--- ELIMINA /components/ y deja solo el nombre del archivo */}
-         <Button type="primary" block style={{ background: '#1890ff', borderColor: '#1890ff' }} icon={<ArrowRightOutlined />}>
-           Ver Tecnología de Drones
-           </Button>
-          </Link>
+              <Paragraph style={{ minHeight: '60px' }}>Especialistas en limpieza de fachadas y paneles solares mediante drones. Innovación que garantiza 100% de seguridad operativa.</Paragraph>
+              <Link href="/vertiClean" passHref>
+                <Button type="primary" block style={{ background: '#1890ff', borderColor: '#1890ff', height: '45px', borderRadius: '8px' }} icon={<ArrowRightOutlined />}>
+                  Ver Tecnología de Drones
+                </Button>
+              </Link>
             </Card>
           </Col>
         </Row>
 
-        {/* 3. EL CARRUSEL DE CONFIANZA (Se mantiene de tu código) */}
-        <div style={{ padding: '80px 0' }}>
-          <Divider orientation="horizontal">EMPRESAS QUE CONFÍAN EN EL GRUPO</Divider>
+        <div style={{ padding: '100px 0' }}>
+          <Divider orientation="horizontal" style={{ borderColor: 'rgba(0,0,0,0.06)' }}>
+            <Text type="secondary" strong style={{ letterSpacing: '2px' }}>CONFIANZA EMPRESARIAL</Text>
+          </Divider>
           <Carousel autoplay dots={false} slidesToShow={5} responsive={[{ breakpoint: 1024, settings: { slidesToShow: 3 } }, { breakpoint: 768, settings: { slidesToShow: 2 } }]}>
             {[
               { src: "/Referencia-logo.png", alt: "Laboratorio Referencia" },
@@ -124,34 +240,40 @@ export default function Home() {
           </Carousel>
         </div>
 
-        {/* 4. VALORES DE ISLACORP */}
-        <Row gutter={[24, 24]} style={{ marginBottom: '80px' }}>
+        <Row gutter={[48, 48]} style={{ marginBottom: '100px' }}>
           <Col xs={24} md={8}>
-            <Space direction="vertical" align="center" style={{ width: '100%', textAlign: 'center' }}>
-              <SafetyCertificateOutlined style={{ fontSize: '40px', color: '#faad14' }} />
+            <div style={{ textAlign: 'center' }}>
+              <SafetyCertificateOutlined style={{ fontSize: '45px', color: '#faad14', marginBottom: '20px' }} />
               <Title level={4}>Seguridad Certificada</Title>
-              <Text type="secondary">Protocolos rigurosos en cada operación.</Text>
-            </Space>
+              <Text type="secondary" style={{ fontSize: '16px' }}>Protocolos internacionales de seguridad en altura y manejo de químicos.</Text>
+            </div>
           </Col>
           <Col xs={24} md={8}>
-            <Space direction="vertical" align="center" style={{ width: '100%', textAlign: 'center' }}>
-              <RocketOutlined style={{ fontSize: '40px', color: '#1890ff' }} />
-              <Title level={4}>Innovación Constante</Title>
-              <Text type="secondary">Tecnología de drones de última generación.</Text>
-            </Space>
+            <div style={{ textAlign: 'center' }}>
+              <RocketOutlined style={{ fontSize: '45px', color: '#1890ff', marginBottom: '20px' }} />
+              <Title level={4}>Innovación Robótica</Title>
+              <Text type="secondary" style={{ fontSize: '16px' }}>La flota de drones más avanzada del Caribe para mantenimiento técnico.</Text>
+            </div>
           </Col>
           <Col xs={24} md={8}>
-            <Space direction="vertical" align="center" style={{ width: '100%', textAlign: 'center' }}>
-              <GlobalOutlined style={{ fontSize: '40px', color: '#52c41a' }} />
-              <Title level={4}>Alcance Nacional</Title>
-              <Text type="secondary">Servicios en todo el territorio dominicano.</Text>
-            </Space>
+            <div style={{ textAlign: 'center' }}>
+              <GlobalOutlined style={{ fontSize: '45px', color: '#52c41a', marginBottom: '20px' }} />
+              <Title level={4}>Cobertura Nacional</Title>
+              <Text type="secondary" style={{ fontSize: '16px' }}>Capacidad logística para atender proyectos en todo el territorio nacional.</Text>
+            </div>
           </Col>
         </Row>
       </div>
 
       <style jsx global>{`
-        .client-logo:hover { filter: grayscale(0%) !important; opacity: 1 !important; transform: scale(1.1); }
+        .client-logo:hover { 
+          filter: grayscale(0%) !important; 
+          opacity: 1 !important; 
+          transform: scale(1.15); 
+        }
+        html {
+          scroll-behavior: smooth;
+        }
       `}</style>
     </MainLayout>
   );
