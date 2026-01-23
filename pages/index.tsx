@@ -7,7 +7,7 @@ import {
   GlobalOutlined,
   RocketOutlined,
   SafetyCertificateOutlined,
-  MenuOutlined
+  
 } from '@ant-design/icons';
 import Link from 'next/link';
 
@@ -65,7 +65,6 @@ const Navbar = () => {
           ISLACORP
         </Text>
       </div>
-
       <Space size="large">
         <Button type="text" style={{ color: '#fff' }} href="#empresas">Empresas</Button>
         <Button 
@@ -122,28 +121,30 @@ export default function Home() {
         <Tag color="blue" style={{ background: 'transparent', border: '1px solid #1890ff', color: '#1890ff', marginBottom: '20px', padding: '0 15px' }}>
           SOLUCIONES DE VANGUARDIA
         </Tag>
-
-        {/* CONTENEDOR FLEX PARA LOGO + TÍTULO */}
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
-          gap: '20px', 
-          marginBottom: '20px',
-          flexWrap: 'wrap'
-        }}>
-          <div style={{
-            width: 'clamp(60px, 7vw, 85px)',
-            height: 'clamp(60px, 7vw, 85px)',
-            backgroundColor: '#fff',
-            borderRadius: '12px',
-            padding: '3px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 25px rgba(24, 144, 255, 0.3)',
-            border: '2px solid #1890ff'
-          }}>
+{/* CONTENEDOR FLEX PARA LOGO GIGANTE + TÍTULO */}
+<div style={{ 
+  display: 'flex', 
+  alignItems: 'center', 
+  justifyContent: 'center', 
+  gap: '35px', 
+  marginBottom: '30px',
+  flexWrap: 'wrap' // Importante para que en móvil el logo se ponga arriba del texto
+}}>
+  <div style={{
+    // Tamaño masivo: mínimo 100px, ideal 15vw, máximo 180px
+    width: 'clamp(100px, 15vw, 180px)',
+    height: 'clamp(100px, 15vw, 180px)',
+    backgroundColor: '#fff',
+    borderRadius: '24px', // Bordes más curvos para un logo más grande
+    padding: '15px', 
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 0 50px rgba(24, 144, 255, 0.5)', // Brillo expandido
+    border: '4px solid #1890ff',
+    transition: 'all 0.4s ease',
+    zIndex: 2
+  }}>
             <img 
               src="/islacorp-logo.jpeg" 
               alt="Islacorp Logo" 
@@ -219,25 +220,36 @@ export default function Home() {
           <Divider orientation="horizontal" style={{ borderColor: 'rgba(0,0,0,0.06)' }}>
             <Text type="secondary" strong style={{ letterSpacing: '2px' }}>CONFIANZA EMPRESARIAL</Text>
           </Divider>
-          <Carousel autoplay dots={false} slidesToShow={5} responsive={[{ breakpoint: 1024, settings: { slidesToShow: 3 } }, { breakpoint: 768, settings: { slidesToShow: 2 } }]}>
-            {[
-              { src: "/Referencia-logo.png", alt: "Laboratorio Referencia" },
-              { src: "/Ccn-logo.webP", alt: "CCN" },
-              { src: "/Synergies-logo.png", alt: "Synergies" },
-              { src: "/Eted-logo.png", alt: "ETED" },
-              { src: "/Changan-logo.png", alt: "Changan" },
-              { src: "/Mayol-logo.webP", alt: "Mayol & Co" },
-              { src: "/BD-logo.jpg", alt: "Bonanza Dominicana" },
-              { src: "/Elias-logo.png", alt: "Elias Distribución" },
-              { src: "/Cine-logo.webP", alt: "Cinematográfica Blancica" }
-            ].map((cliente, index) => (
-              <div key={index}>
-                <div style={logoWrapperStyle}>  
-                  <img src={cliente.src} alt={cliente.alt} style={logoImgStyle} className="client-logo" />
-                </div>
-              </div>
-            ))}
-          </Carousel>
+         <Carousel 
+  autoplay 
+  dots={false} 
+  slidesToShow={5} 
+  autoplaySpeed={1500} // Cambiado de 3000 a 1500 (pasa cada 1.5 segundos)
+  speed={500} // Velocidad del deslizamiento (0.5 segundos)
+  easing="linear" // Hace que el movimiento sea constante
+  responsive={[
+    { breakpoint: 1024, settings: { slidesToShow: 3 } }, 
+    { breakpoint: 768, settings: { slidesToShow: 2 } }
+  ]}
+>
+  {[
+    { src: "/Referencia-logo.png", alt: "Laboratorio Referencia" },
+    { src: "/Ccn-logo.webP", alt: "CCN" },
+    { src: "/Synergies-logo.png", alt: "Synergies" },
+    { src: "/Eted-logo.png", alt: "ETED" },
+    { src: "/Changan-logo.png", alt: "Changan" },
+    { src: "/Mayol-logo.webP", alt: "Mayol & Co" },
+    { src: "/BD-logo.jpg", alt: "Bonanza Dominicana" },
+    { src: "/Elias-logo.png", alt: "Elias Distribución" },
+    { src: "/Cine-logo.webP", alt: "Cinematográfica Blancica" }
+  ].map((cliente, index) => (
+    <div key={index}>
+      <div style={logoWrapperStyle}>  
+        <img src={cliente.src} alt={cliente.alt} style={logoImgStyle} className="client-logo" />
+      </div>
+    </div>
+  ))}
+</Carousel>
         </div>
 
         <Row gutter={[48, 48]} style={{ marginBottom: '100px' }}>

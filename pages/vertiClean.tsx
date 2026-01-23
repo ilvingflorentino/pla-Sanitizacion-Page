@@ -95,7 +95,10 @@ export default function VertiCleanFuturistic() {
             {[
               { title: "Paneles Solares", img: "/drone-paneles.png", desc: "Optimización de absorción fotovoltaica mediante limpieza robótica." },
               { title: "Fachadas de Cristal", img: "/Drone-cristales.webp", desc: "Mantenimiento impecable en torres corporativas sin interrumpir labores." },
-              { title: "Inspección Industrial", img: "/inspeccion-Drone.webp", desc: "Análisis térmico y estructural mediante visión computarizada avanzada." }
+              { title: "Inspección Industrial", img: "/inspeccion-Drone.webp", desc: "Análisis térmico y estructural mediante visión computarizada avanzada." },
+              { title: "Limpiezas de Aereogeneradores", img: "/limpieza-generadore.jpg", desc: "Limpieza Profunda Para Aumentar Eficiencia de Aerogeneradores (Eólico)." },
+              { title: "Limpieza de Fachadas.", img: "/fachadas.webp", desc: "Acceso seguro y eficiente a estructuras complejas y de difícil acceso." },
+               { title: "Limpieza de Aisladores de Alta Tension.", img: "/limpieza-aisladores.webp", desc: "Las líneas de transmisión eléctrica acumulan polvo, salitre o contaminación, lo que puede causar apagones o cortocircuitos (arcos eléctricos)." }
             ].map((app, idx) => (
               <Col xs={24} md={8} key={idx}>
                 <Card
@@ -106,9 +109,7 @@ export default function VertiCleanFuturistic() {
                 >
                   <Title level={4} style={{ color: '#1890ff' }}>{app.title}</Title>
                   <Paragraph style={{ color: 'rgba(255,255,255,0.6)' }}>{app.desc}</Paragraph>
-                  <Button type="text" style={{ color: '#fff', padding: 0 }}>
-                    Explorar <ArrowRightOutlined />
-                  </Button>
+                  
                 </Card>
               </Col>
             ))}
@@ -116,6 +117,49 @@ export default function VertiCleanFuturistic() {
 
           <Divider style={{ borderColor: 'rgba(255,255,255,0.1)', margin: '100px 0' }} />
 
+<div style={{ padding: '60px 0', textAlign: 'center' }}>
+  <div style={{
+    position: 'relative',
+    maxWidth: '1100px', // Un poco más grande para apreciar la calidad
+    margin: '0 auto',
+    borderRadius: '20px',
+    overflow: 'hidden',
+    boxShadow: '0 30px 70px rgba(0, 0, 0, 0.5)',
+    backgroundColor: '#000',
+    // Filtro sutil para mejorar el contraste visual
+    backdropFilter: 'contrast(1.1)' 
+  }}>
+    <div style={{ position: 'relative', paddingTop: '56.25%', width: '100%' }}>
+      <iframe 
+    
+        src="https://www.youtube.com/embed/0WhgdQ4qfLU?autoplay=1&mute=1&loop=1&playlist=0WhgdQ4qfLU&controls=0&modestbranding=1&rel=0&iv_load_policy=3&vq=hd1080&showinfo=0" 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          border: 'none',
+          pointerEvents: 'none',
+          transform: 'scale(1.01)' // Evita bordes blancos de aliasado
+        }}
+        allow="autoplay; encrypted-media"
+      />
+    </div>
+    
+    {/* Overlay para suavizar el grano del video y que se vea más premium */}
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(rgba(0,21,41,0.1), transparent)',
+      pointerEvents: 'none',
+      zIndex: 5
+    }} />
+  </div>
+</div>
           {/* --- SECCIÓN TÉCNICA: IMAGEN HUD (ACTUALIZADA) + TEXTO --- */}
           <Row gutter={[60, 40]} align="middle">
             <Col xs={24} md={12}>
@@ -141,7 +185,7 @@ export default function VertiCleanFuturistic() {
 
                   <div style={{ position: 'absolute', bottom: '15px', right: '15px', opacity: 0.6 }}>
                     <Text style={{ color: '#fff', fontSize: '10px', fontFamily: 'monospace' }}>
-                      VERTI_UNIT_RD.01
+                      VertiClean
                     </Text>
                   </div>
                 </div>

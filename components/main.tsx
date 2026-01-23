@@ -56,6 +56,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             },
             { key: '3', label: <Link href="/nosotros">Nosotros</Link> },
             { key: '4', label: <Link href="/contactos">Contacto</Link> },
+            { key: '5', label: <Link href="/vacantes">Vacantes</Link> },
           ]}
         />
 
