@@ -210,10 +210,10 @@ export default function Home() {
               { src: "/Synergies-logo.png", alt: "Synergies" },
               { src: "/Eted-logo.png", alt: "ETED" },
               { src: "/Changan-logo.png", alt: "Changan" },
-              { src: "/Mayol-logo.webP", alt: "Mayol" },
+              { src: "/Mayol-logo.webp", alt: "Mayol" },
               { src: "/BD-logo.jpg", alt: "Bonanza" },
               { src: "/Elias-logo.png", alt: "Elias" },
-              { src: "/Cine-logo.webP", alt: "Blancica" }
+              { src: "/Cine-logo.webp", alt: "Blancica" }
             ].map((cliente, index) => (
               <div key={index} style={logoWrapperStyle}>  
                 <img src={cliente.src} alt={cliente.alt} style={logoImgStyle} className="client-logo" />
