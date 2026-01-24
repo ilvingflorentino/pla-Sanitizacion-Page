@@ -28,7 +28,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <Layout style={{ minHeight: '100vh', background: '#fff' }}>
       
-      {/* Barra superior - Oculta en móviles muy pequeños o ajustada */}
+      {/* Barra superior de información */}
       <div style={{ 
         background: '#001529', 
         padding: '5px 20px', 
@@ -50,13 +50,26 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         alignItems: 'center', 
         background: 'white',
         boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-        padding: '0 20px', // Reducido para móvil
+        padding: '0 20px', 
         justifyContent: 'space-between'
       }}>
-        {/* LOGO */}
+        
+        {/* LOGO REPARADO: Imagen + Texto */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link href="/">
-            <div style={{ cursor: 'pointer' }}>
+            <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <img 
+                src="/islacorp-logo.jpeg" 
+                alt="Logo Islacorp" 
+                style={{ 
+                  width: '35px', 
+                  height: '35px', 
+                  borderRadius: '4px',
+                  objectFit: 'contain',
+                  background: '#fff'
+                }} 
+                onError={(e) => { e.currentTarget.style.display = 'none'; }} // Si la imagen no carga, se oculta para no dejar el icono roto
+              />
               <Title level={4} style={{ margin: 0, color: '#001529', fontSize: '18px' }}>
                 ISLA<span style={{ color: '#1890ff', fontWeight: 'bold' }}>CORP</span> 
               </Title>
@@ -64,13 +77,12 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </Link>
         </div>
 
-        {/* MENÚ ESCRITORIO - Se oculta en móvil (clase CSS nativa o inline) */}
+        {/* MENÚ ESCRITORIO */}
         <div className="desktop-menu" style={{ flex: 2, display: 'flex', justifyContent: 'center' }}>
           <Menu
             mode="horizontal"
             style={{ borderBottom: 'none', minWidth: '400px', justifyContent: 'center' }}
             items={menuItems}
-            disabledOverflow // Evita que AntD colapse el menú solo
           />
         </div>
 
@@ -88,16 +100,14 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <span className="btn-text">Cotizar</span>
           </Button> 
 
-          {/* Icono de Hamburguesa para móvil */}
           <Button 
             className="mobile-menu-btn"
             icon={<MenuOutlined />} 
             onClick={() => setVisible(true)} 
-            style={{ display: 'none' }} // Se activa con CSS abajo
+            style={{ display: 'none', background: '#f0f2f5', border: 'none' }} 
           />
         </div>
 
-        {/* Cajón de navegación móvil */}
         <Drawer
           title="Menú ISLACORP"
           placement="right"
@@ -130,20 +140,23 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </Text>
       </Footer>
 
-      {/* ESTILOS CSS PARA HACER LA MAGIA RESPONSIVE */}
+      {/* CSS GLOBAL PARA RESPONSIVE */}
       <style jsx global>{`
-        @media (max-width: 768px) {
+        @media (max-width: 992px) { /* Aumenté el rango para que el menú no choque con el botón */
           .desktop-menu {
             display: none !important;
           }
           .mobile-menu-btn {
-            display: block !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
           }
           .btn-text {
-            display: none; /* Oculta el texto "Cotizar" en móviles muy pequeños */
+            display: none !important; /* Deja solo el icono de WhatsApp en móvil */
           }
           .header-btn {
-            padding: 4px 10px !important;
+            padding: 4px 12px !important;
+            width: 40px;
           }
         }
       `}</style>
