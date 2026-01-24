@@ -193,7 +193,7 @@ export default function Home() {
 
         {/* LOGOS DE CLIENTES RESPONSIVE */}
         <div style={{ padding: '60px 0' }}>
-          <Divider orientation="center"><Text type="secondary" style={{ letterSpacing: '2px', fontSize: '10px' }}>CONFIANZA EMPRESARIAL</Text></Divider>
+          <Divider orientation="horizontal"><Text type="secondary" style={{ letterSpacing: '2px', fontSize: '10px' }}>CONFIANZA EMPRESARIAL</Text></Divider>
           <Carousel 
             autoplay 
             dots={false} 
