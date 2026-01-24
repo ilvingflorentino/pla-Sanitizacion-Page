@@ -44,7 +44,7 @@ const Navbar = () => {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <img 
-          src="/islacorp-logo.jpeg" 
+          src="/islaCorp-Logo.jpeg" 
           alt="Logo" 
           style={{ width: '30px', height: '30px', borderRadius: '4px', background: 'white', padding: '2px' }} 
         />
