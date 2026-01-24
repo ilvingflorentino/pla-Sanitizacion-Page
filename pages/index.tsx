@@ -206,7 +206,7 @@ export default function Home() {
           >
             {[
               { src: "/Referencia-logo.png", alt: "Referencia" },
-              { src: "/Ccn-logo.webP", alt: "CCN" },
+              { src: "/ccn-logo.webP", alt: "CCN" },
               { src: "/Synergies-logo.png", alt: "Synergies" },
               { src: "/Eted-logo.png", alt: "ETED" },
               { src: "/Changan-logo.png", alt: "Changan" },
