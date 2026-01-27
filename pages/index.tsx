@@ -44,7 +44,7 @@ const Navbar = () => {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <img 
-          src="/islacorp-logo.jpeg" 
+          src="/islacorp.jpeg" 
           alt="Logo" 
           style={{ width: '30px', height: '30px', borderRadius: '4px', background: 'white', padding: '2px' }} 
         />
@@ -181,7 +181,7 @@ export default function Home() {
           <Col xs={24} md={12}>
             <Card hoverable style={{ borderRadius: '20px', overflow: 'hidden' }}
               cover={<div style={{ background: '#e6f7ff', padding: '30px', textAlign: 'center' }}>
-                <Image src="/VertiClean-PrimaryLogo_page-0001.jpg" preview={false} style={{ maxHeight: '100px' }} />
+                <Image src="/Verticlean.jpg" preview={false} style={{ maxHeight: '100px' }} />
               </div>}
             >
               <Title level={3}>VertiClean</Title>
@@ -203,10 +203,11 @@ export default function Home() {
               { breakpoint: 1024, settings: { slidesToShow: 3 } }, 
               { breakpoint: 576, settings: { slidesToShow: 2 } }
             ]}
-          >
+          > 
+        
             {[
               { src: "/Referencia-logo.png", alt: "Referencia" },
-              { src: "/ccn-logo.webp", alt: "CCN" },
+              { src: "/ccn.webp", alt: "CCN" },
               { src: "/Synergies-logo.png", alt: "Synergies" },
               { src: "/Eted-logo.png", alt: "ETED" },
               { src: "/Changan-logo.png", alt: "Changan" },
