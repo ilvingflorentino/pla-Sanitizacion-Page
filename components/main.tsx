@@ -59,7 +59,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Link href="/">
             <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <img 
-                src="/islacorp-logo.jpeg" 
+                src="/islacorp.jpeg" 
                 alt="Logo Islacorp" 
                 style={{ 
                   width: '35px', 

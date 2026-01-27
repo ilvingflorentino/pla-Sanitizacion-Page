@@ -129,7 +129,7 @@ export default function Home() {
             border: '3px solid #1890ff',
           }}>
             <img 
-              src="/islacorp-logo.jpeg" 
+              src="/islacorp.jpeg" 
               alt="Logo" 
               style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
             />
@@ -206,7 +206,7 @@ export default function Home() {
           >
             {[
               { src: "/Referencia-logo.png", alt: "Referencia" },
-              { src: "/ccn-logo.webP", alt: "CCN" },
+              { src: "/ccn-logo.webp", alt: "CCN" },
               { src: "/Synergies-logo.png", alt: "Synergies" },
               { src: "/Eted-logo.png", alt: "ETED" },
               { src: "/Changan-logo.png", alt: "Changan" },
