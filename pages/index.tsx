@@ -159,7 +159,34 @@ export default function Home() {
           </Button>
         </div>
       </div>
-
+{/* --- NUEVA SECCIÓN DE VIDEO --- */}
+        <div style={{ marginBottom: '60px', textAlign: 'center' }}>
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '900px', 
+            margin: '0 auto', 
+            borderRadius: '24px', 
+            overflow: 'hidden', 
+            boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+            border: '1px solid rgba(0,0,0,0.05)'
+          }}>
+            <video 
+              width="100%" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              style={{ display: 'block' }}
+            >
+              <source src="/verticlean.mp4" type="video/mp4" />
+              Tu navegador no soporta el formato de video.
+            </video>
+          </div>
+          <Text type="secondary" style={{ marginTop: '15px', display: 'block', fontStyle: 'italic' }}>
+            Tecnología de precisión en acción
+          </Text>
+        </div>
+        {/* --- FIN SECCIÓN DE VIDEO --- */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Title level={2} id="empresas" style={{ textAlign: 'center', marginBottom: '40px', fontSize: 'clamp(24px, 5vw, 36px)' }}>
           Nuestras Divisiones

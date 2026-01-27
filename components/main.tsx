@@ -132,11 +132,11 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <Footer style={{ textAlign: 'center', background: '#001529', color: 'rgba(255,255,255,0.65)', padding: '40px 20px' }}>
         <Title level={3} style={{ color: 'white', marginBottom: '10px', fontSize: '20px' }}>ISLACORP SRL</Title>
         <Paragraph style={{ color: 'rgba(255,255,255,0.45)', maxWidth: '600px', margin: '0 auto 20px', fontSize: '13px' }}>
-          Soluciones integrales de mantenimiento y salud ambiental. 
+          Soluciones integrales de mantenimiento y salud ambientales. Tu Mejor Opción en Servicios Profesionales
         </Paragraph>
         <Divider style={{ borderColor: 'rgba(255,255,255,0.1)' }} />
         <Text style={{ color: 'rgba(255,255,255,0.45)', fontSize: '12px' }}>
-          ©2025 IslaCorp SRL.
+          ©2026 IslaCorp SRL.
         </Text>
       </Footer>
 
