@@ -17,7 +17,7 @@ export default function Contacto() {
   // Tus imágenes reales de los operativos
   const fotosTrabajo = [
     "pla-logo.png",
-    "/VertiClean.jpg", 
+    "/Verticlean.jpg", 
     "/fumigadores-2.webp",
     "inspeccion-Drone.webp",
     "/fumigadores.jpg",
